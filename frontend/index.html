@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction AI Assistant</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="chat-container">
+        <header>
+            <div class="avatar">🏗️</div>
+            <div class="header-info">
+                <h1>Construction AI Assistant</h1>
+                <p>Ask me about policies, specs, or FAQs</p>
+            </div>
+        </header>
+
+        <div class="chat-history" id="chatHistory">
+            <div class="message system-message">
+                Hello! I am your Construction AI Assistant. I strictly use verified internal documents to answer your questions.
+            </div>
+        </div>
+
+        <div class="input-area">
+            <input type="text" id="userInput" placeholder="Ask a question (e.g. 'What factors affect construction project delays?')" autocomplete="off">
+            <button id="sendBtn">Send</button>
+        </div>
+    </div>
+    
+    <script src="/static/script.js"></script>
+</body>
+</html>
