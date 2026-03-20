@@ -1,4 +1,4 @@
-# FastAPI Main App for Construction RAG - Vercel Stable Llama 3.3 w/ Fallback
+# FastAPI Main App for Construction RAG - Vercel Stable Verified Fallback
 import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
