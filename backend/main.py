@@ -1,4 +1,4 @@
-# FastAPI Main App for Construction RAG - Vercel Stable
+# FastAPI Main App for Construction RAG - Vercel Stable Llama 3.3
 import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
