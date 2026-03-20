@@ -72,12 +72,35 @@ Answer:"""
         else:
             context_str = format_docs(docs)
         
-        chain = prompt | llm | StrOutputParser()
-        answer = chain.invoke({"context": context_str, "question": question})
+        # List of reliable free models to try in case of rate limits (429) or failures
+        models_to_try = [
+            "meta-llama/llama-3.3-70b-instruct:free",
+            "google/gemini-2.0-flash-lite-preview-02-05:free",
+            "openchat/openchat-7b:free",
+            "mistralai/mistral-7b-instruct:free"
+        ]
         
+        last_error = None
+        for model_id in models_to_try:
+            try:
+                # Update LLM model for this attempt
+                llm.model_name = model_id
+                chain = prompt | llm | StrOutputParser()
+                answer = chain.invoke({"context": context_str, "question": question})
+                
+                return {
+                    "answer": answer,
+                    "context": [{"source": doc['metadata'].get("source", "Unknown"), "content": doc['page_content']} for doc in docs]
+                }
+            except Exception as e:
+                last_error = str(e)
+                print(f"Model {model_id} failed: {last_error}. Trying next...")
+                continue
+        
+        # If all fail, return the last error
         return {
-            "answer": answer,
-            "context": [{"source": doc['metadata'].get("source", "Unknown"), "content": doc['page_content']} for doc in docs]
+            "answer": f"Error: All available free models are currently rate-limited or unavailable. Please try again in a few minutes. (Last error: {last_error})",
+            "context": []
         }
 
     return ask_question
