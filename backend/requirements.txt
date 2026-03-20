@@ -10,3 +10,4 @@ python-dotenv
 openai
 requests
 python-multipart
+langchain-openai
