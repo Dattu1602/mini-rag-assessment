@@ -17,7 +17,7 @@ def get_llm():
     if openrouter_key:
         print("Using OpenRouter LLM")
         return ChatOpenAI(
-            model="google/gemini-2.0-flash-lite-preview-02-05:raw",
+            model="google/gemini-2.0-flash-lite-preview-02-05:free",
             openai_api_key=openrouter_key,
             openai_api_base="https://openrouter.ai/api/v1",
             max_tokens=500
