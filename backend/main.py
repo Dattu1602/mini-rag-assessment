@@ -1,4 +1,4 @@
-# FastAPI Main App for Construction RAG
+# FastAPI Main App for Construction RAG - Vercel Stable
 import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
