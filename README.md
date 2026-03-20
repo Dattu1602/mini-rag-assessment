@@ -34,12 +34,31 @@ Process the provided markup documents and build the FAISS index:
 python backend/document_processor.py
 ```
 
-### 5. Start the Server
+### 5. Start the Server (Local)
 Run the FastAPI backend:
 ```powershell
 uvicorn backend.main:app --host 0.0.0.0 --port 8000
 ```
 Open your browser to `http://localhost:8000` to interact with the chatbot frontend.
+
+---
+
+## Deployment Options
+
+### Option 1: Render (Easiest)
+1. **GitHub Sync**: Connect your repository.
+2. **Build Command**: `pip install -r backend/requirements.txt && python backend/document_processor.py`
+3. **Start Command**: `uvicorn backend.main:app --host 0.0.0.0 --port $PORT`
+
+### Option 2: Railway or Fly.io (Docker)
+The repository includes a `Dockerfile`. These platforms will automatically detect it:
+1. **GitHub Sync**: Point it to this repo.
+2. **Automatic Build**: The platform will build the container and serve it on port 8000.
+
+### Option 3: Hugging Face Spaces (AI Optimized)
+1. Create a "Docker" Space on Hugging Face.
+2. Connect this GitHub repository.
+3. It will host the model and frontend with high availability.
 
 ---
 
