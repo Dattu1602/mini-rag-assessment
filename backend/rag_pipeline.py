@@ -72,12 +72,12 @@ Answer:"""
         else:
             context_str = format_docs(docs)
         
-        # List of reliable free models to try in case of rate limits (429) or failures
+        # List of verified reliable free models to try in case of rate limits (429) or failures
         models_to_try = [
-            "meta-llama/llama-3.3-70b-instruct:free",
+            "nvidia/nemotron-3-super-120b-a12b:free",
+            "minimax/minimax-m2.5:free",
             "google/gemini-2.0-flash-lite-preview-02-05:free",
-            "openchat/openchat-7b:free",
-            "mistralai/mistral-7b-instruct:free"
+            "meta-llama/llama-3.3-70b-instruct:free"
         ]
         
         last_error = None
