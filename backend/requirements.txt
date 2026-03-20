@@ -3,11 +3,9 @@ uvicorn
 langchain
 langchain-community
 langchain-core
-langchain-huggingface
-sentence-transformers
-faiss-cpu
+langchain-openai
+scikit-learn
 python-dotenv
 openai
 requests
 python-multipart
-langchain-openai
