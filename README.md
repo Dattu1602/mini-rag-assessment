@@ -87,31 +87,6 @@ To evaluate groundedness and accuracy, here are 10 test questions derived *stric
 - **Grounding Validation**: The model rigorously follows its strict prompt directives. If asked outside knowledge (e.g. *"how should weather delay be documented?"*), it correctly defaults to answering: *"I don't know based on the provided documents"* rather than hallucinating an answer!
 - **Transparency**: Every answer generated through the UI explicitly lists the retrieved chunks and source filenames used for formulation.
 - **Speed**: The local FAISS/TF-IDF semantic search avoids round-trip latency, enabling instant context injection for the local LLM.
-
-
-### Appendix: Automated QA Test Runs
-
-**Q1: What is the per square foot price for the Premier package?**
-
-> **A:** ₹1,995 /sqft (incl. GST).
-
-*Sources Retrieved: 4 chunks*
-
----
-
-**Q2: How does the Escrow-based payment model protect customers?**
-
-> **A:** According to doc3.md, Customer payments are made to an escrow account. A project manager verifies stage completion, and funds are disbursed to the construction partner after verification, which makes contractor payments "stage-based". This ensures that payments are released only after verified completion, reducing financial risk for customers and improving transparency and trust.
-
-*Sources Retrieved: 4 chunks*
-
----
-
-
-### Appendix: Automated QA Test Runs & Results
-
-Below are the transcriptions of automated testing queries run directly against the local RAG pipeline to evaluate grounding, completeness, and hallucination prevention.
-
 **Q1: What is the per square foot price for the Premier package?**
 
 > **A:** ₹1,995 /sqft (incl. GST).
