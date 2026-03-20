@@ -60,6 +60,12 @@ The repository includes a `Dockerfile`. These platforms will automatically detec
 2. Connect this GitHub repository.
 3. It will host the model and frontend with high availability.
 
+### Option 4: Vercel (Serverless)
+The repository includes a `vercel.json` configuration:
+1. **GitHub Sync**: Import the repo into Vercel.
+2. **Environment Variables**: Add `OPENROUTER_API_KEY` in the Vercel dashboard.
+3. **Automatic Deployment**: Vercel handles the API routing and static frontend serving automatically.
+
 ---
 
 ## Evaluation & Quality Analysis (Bonus)
