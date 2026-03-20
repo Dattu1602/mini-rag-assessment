@@ -17,7 +17,7 @@ def get_llm():
     if openrouter_key:
         print("Using OpenRouter LLM")
         return ChatOpenAI(
-            model="meta-llama/llama-3.1-8b-instruct:free",
+            model="meta-llama/llama-3.3-70b-instruct:free",
             openai_api_key=openrouter_key,
             openai_api_base="https://openrouter.ai/api/v1",
             max_tokens=500
